@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 웹사이트</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            font-family: '맑은 고딕', sans-serif;
+        }
+
+        nav {
+           background-color: #000;
+           padding: 10px;
+       }
+       nav a {
+           color: white;
+           text-decoration: none;
+           padding: 5px 10px;
+           margin-right: 5px;
+       }
+       nav a:hover {
+           color: black;
+           background-color: white;
+           border-radius: 15px;
+       }
+       .active {
+           color: black;
+           background-color: #FFF;
+           border-radius: 15px;
+       }        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      .active { color: Black; background-color: #FFF; border-radius: 15px; }
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 1200px;
+            height: 780px;
+        }
+        .image-container {
+            width: 400px;
+            height: 400px;
+            position: fixed;
+            top: 50%;
+            right: 100px;
+            transform: translateY(-50%);
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+            transition: border-radius 0.3s ease;
+        }
+        .image-container a:hover img {
+            border-radius: 50%;
+        }
+        .text-container {
+            flex-grow: 1;
+            max-width: 500px;
+            padding: 20px;
+            text-align: left;
+            position: relative;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .lyrics-container {
+            width: 700px;
+            height: 500px;
+            overflow-y: scroll;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-right: 20px;
+            margin-left: -100px; /* 더 왼쪽으로 이동 */
+        }
+        .lyrics-container::-webkit-scrollbar {
+            display: none;
+        }
+        .description span, .album-description p {
+            font-size: 16px;
+            line-height: 2; /* 행간 조정 */
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        .description span {
+            display: block;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: calc(var(--order) * 0.2s);
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .option {
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .album-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            z-index: 1;
+            transition: transform 0.3s ease;
+            transform: translateY(-100%);
+        }
+        .album-description.show {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+         <nav>
+       <a href="all.html" class="active">all</a>
+        <a href="Newjins.html">Newjins</a>
+        <a href="Aespa.html">Aespa</a>
+        <a href="Ive.html">Ive</a>
+        <a href="Ateez.html">Ateez</a>
+        <a href="Tws.html">Tws</a>
+    </nav>
+    <div class="album-description">
+        <p>뉴진스 - 버블검</p>
+        <p>2024년 5월 24일에 발매된 NewJeans의 더블 싱글이다.</p>
+        <p>심플한 드럼패턴에 시원한 느낌의 기타와 패드 신스 사운드가 더해져 뉴진스 만의 통통튀는 매력을 느낄 수 있는 곡. 뉴진스 멤버들의 상큼한 음색과 다양한 무드 체인지를 통해 다채로운 매력을 느낄 수 있는 수록 싱글곡이다.</p>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="lyrics-container">
+                <div class="title">Bubble Gum</div>
+                <div class="subtitle">뉴진스</div>
+                <div class="description">
+                    <span style="--order: 1;">You just get my heart pump, pumping Every time that you're here around me</span>
+                    <span style="--order: 2;">노랫 소리가 또 흘러나와, yeah (yeah)</span>
+                    <span style="--order: 3;">오늘 오래 걸린 이유 I'm always so excited to meet you</span>
+                    <span style="--order: 4;">내 향기가 널 먼저 찾아가, yeah (먼저 찾아가, yeah)</span>
+                    <span style="--order: 5;">눈 감아도 기억나게, 어디라도 따라갈래</span>
+                    <span style="--order: 6;">You're so delicate, 거품 속에 숨었네, uh-uh-uh-uh-uh</span>
+                    <span style="--order: 7;">Oh, you make my heart melt away, you're a softie, 구름 같아</span>
+                    <span style="--order: 8;">이건 말로 설명 못해, you got me, oh-oh-oh-oh-oh (oh!)</span>
+                    <span style="--order: 9;">이미 우린 저기 멀리 높이 있는 풍선같이</span>
+                    <span style="--order: 10;">Have you right here in a basket</span>
+                    <span style="--order: 11;">Oh, my baby, sweet like bubble gum</span>
+                    <span style="--order: 12;">Bouncin' like playin' ball 더 높이 올려줘</span>
+                    <span style="--order: 13;">We're gonna fly away</span>
+                    <span style="--order: 14;">Sweet like bubble, yum</span>
+                    <span style="--order: 15;">So smooth, soft like a hug 더 멀리 날려줘</span>
+                    <span style="--order: 16;">Let's go far away</span>
+                    <span style="--order: 17;">You're my favorite flavor, bubble gum</span>
+                    <span style="--order: 18;">Bubble, bubble, bubble, bubble, bubble, bubble</span>
+                    <span style="--order: 19;">Bubble, bubble, bubble gum</span>
+                    <span style="--order: 20;">얘기 늘어놓아 줄줄 Like I got nothing better to do</span>
+                    <span style="--order: 21;">내 손바닥 안에 쏙 들어와, yeah (yeah)</span>
+                    <span style="--order: 22;">나만 알고 싶은 비밀 (oh-oh)</span>
+                    <span style="--order: 23;">All I know is I need this feeling (oh-oh)</span>
+                    <span style="--order: 24;">내 윤기가 널 먼저 사로잡아, yeah (ooh, oh)</span>
+                    <span style="--order: 25;">눈 감아도 기억나게, 어디라도 따라갈래</span>
+                    <span style="--order: 26;">You're so delicate, 거품 속에 숨었네, uh-uh-uh-uh-uh</span>
+                    <span style="--order: 27;">Oh, you make my heart melt away, you're a softie, 구름 같아</span>
+                    <span style="--order: 28;">이건 말로 설명 못해, you got me, oh-oh-oh-oh-oh</span>
+                    <span style="--order: 29;">Sweet like bubble gum</span>
+                    <span style="--order: 30;">Bouncin' like playin' ball 더 높이 올려줘</span>
+                    <span style="--order: 31;">We're gonna fly away</span>
+                    <span style="--order: 32;">Sweet like bubble, yum</span>
+                    <span style="--order: 33;">So smooth, soft like a hug 더 멀리 날려줘</span>
+                    <span style="--order: 34;">Let's go far away</span>
+                    <span style="--order: 35;">눈 감아도 기억나게, 어디라도 따라갈래</span>
+                    <span style="--order: 36;">You're so delicate, 거품 속에 숨었네, uh-uh-uh-uh-uh</span>
+                    <span style="--order: 37;">Oh, you make my heart melt away, you're a softie, 구름 같아</span>
+                    <span style="--order: 38;">이건 말로 설명 못해, you got me, oh-oh-oh-oh-oh</span>
+                    <span style="--order: 39;">이미 우린 저기 멀리 높이 있는 풍선같이</span>
+                    <span style="--order: 40;">Have you right here in a basket</span>
+                    <span style="--order: 41;">Oh, my baby, sweet like bubble gum</span>
+                    <span style="--order: 42;">이미 우린 저기 멀리 높이 있는 풍선같이</span>
+                    <span style="--order: 43;">Have you right here in a basket</span>
+                    <span style="--order: 44;">Oh, my baby, sweet like bubble gum</span>
+                </div>
+            </div>
+            <div class="image-container">
+                <a href="https://www.youtube.com/watch?v=ft70sAYrFyY" target="_blank">
+                    <img src="https://i.imgur.com/RJx1589.jpeg" alt="이미지">
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const albumDescription = document.querySelector('.album-description');
+        const container = document.querySelector('.container');
+
+        container.addEventListener('click', () => {
+            albumDescription.classList.toggle('show');
+        });
+
+        container.addEventListener('scroll', () => {
+            albumDescription.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
